@@ -73,8 +73,9 @@ body {
 .logo__mark {
   width: 36px;
   height: 36px;
-  border-radius: 12px;
-  background: linear-gradient(140deg, var(--red-700), var(--red-500));
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
 }
 
 .logo__text {
@@ -229,7 +230,7 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 280px 1fr;
-  background: #f8f5f5;
+  background: var(--white);
   color: var(--ink);
 }
 
@@ -261,14 +262,15 @@ body {
 
 .sidebar__nav {
   display: grid;
-  gap: 14px;
+  gap: 8px;
+  align-content: start;
 }
 
 .nav-item {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: rgba(255, 255, 255, 0.12);
+  background: transparent;
   color: var(--white);
   border: none;
   padding: 12px 14px;
@@ -279,15 +281,15 @@ body {
   text-align: left;
 }
 
-.nav-item--ghost {
-  background: rgba(255, 255, 255, 0.06);
+.nav-item--active {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .nav-icon {
   width: 18px;
   height: 18px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.65);
+  object-fit: contain;
+  display: block;
 }
 
 .sidebar__footer {
@@ -298,8 +300,8 @@ body {
 .dashboard-main {
   padding: 36px 40px;
   display: grid;
-  grid-template-rows: auto 1fr;
-  gap: 24px;
+  grid-template-rows: auto auto 1fr;
+  gap: 18px;
 }
 
 .dashboard-header {
@@ -311,6 +313,12 @@ body {
 
 .dashboard-header h1 {
   font-size: 28px;
+}
+
+.dashboard-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .search {
@@ -352,9 +360,39 @@ body {
 }
 
 .dashboard-body {
-  background: var(--white);
-  border-radius: 24px;
-  border: 1px solid #efe0e0;
+  min-height: 360px;
+}
+
+.dashboard-subnav {
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 1px solid #eee5e5;
+  padding-bottom: 6px;
+}
+
+.subnav-tabs {
+  display: inline-flex;
+  gap: 18px;
+}
+
+.subnav-tab {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 6px 2px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.subnav-tab.is-active {
+  color: var(--ink);
+  border-bottom-color: #c9a4a4;
+}
+
+.subnav-placeholder {
+  height: 26px;
 }
 
 @media (max-width: 960px) {

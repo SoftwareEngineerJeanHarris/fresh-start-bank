@@ -7,7 +7,7 @@ export default function App() {
   const [mode, setMode] = useState<'login' | 'signup'>('login')
 
   if (screen === 'dashboard') {
-    return <DashboardScreen onBackToAuth={() => setScreen('auth')} />
+    return <DashboardScreen />
   }
 
   return (

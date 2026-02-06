@@ -1,4 +1,5 @@
 import loginImage from '../assets/images/login-stock-img.jpg'
+import piggyBankBlack from '../assets/images/icons/piggy-bank-black.png'
 
 type AuthMode = 'login' | 'signup'
 
@@ -15,7 +16,7 @@ export default function AuthScreen({ mode, onModeChange, onEnterDashboard }: Aut
         <section className="auth-left">
           <div className="auth-left__top">
             <div className="logo">
-              <span className="logo__mark" aria-hidden="true" />
+              <img className="logo__mark" src={piggyBankBlack} alt="" />
               <span className="logo__text">Fresh Start Bank</span>
             </div>
           </div>
